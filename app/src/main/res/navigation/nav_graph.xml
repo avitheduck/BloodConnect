@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--This is a comment to force a rebuild-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -35,6 +36,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_emergencyRequestsFragment"
             app:destination="@id/emergencyRequestsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_scheduleDonationFragment"
+            app:destination="@id/scheduleDonationFragment" />
     </fragment>
     
     <fragment
@@ -42,5 +46,11 @@
         android:name="com.duckco.bloodconnect.EmergencyRequestsFragment"
         android:label="fragment_emergency_requests"
         tools:layout="@layout/fragment_emergency_requests" />
+
+    <fragment
+        android:id="@+id/scheduleDonationFragment"
+        android:name="com.duckco.bloodconnect.ScheduleDonationFragment"
+        android:label="fragment_schedule_donation"
+        tools:layout="@layout/fragment_schedule_donation" />
 
 </navigation>

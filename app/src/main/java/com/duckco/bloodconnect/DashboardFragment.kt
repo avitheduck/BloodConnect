@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.duckco.bloodconnect.R
 
 class DashboardFragment : Fragment() {
 
@@ -23,6 +24,10 @@ class DashboardFragment : Fragment() {
 
         view.findViewById<Button>(R.id.findDonationCentersButton).setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_emergencyRequestsFragment)
+        }
+
+        view.findViewById<Button>(R.id.scheduleAppointmentButton).setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_scheduleDonationFragment)
         }
     }
 }
