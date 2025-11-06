@@ -222,21 +222,28 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/findDonationCentersButton"
+            android:id="@+id/createRequestButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/button_background"
-            android:text="Find Donation Centers"
+            android:text="Create Emergency Request"
             android:textColor="@android:color/white"
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/scheduleAppointmentButton"
+            android:id="@+id/findDonationCentersButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_background"
+            android:text="Find Donation Centers" />
+
+        <Button
+            android:id="@+id/scheduleAppointmentButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Schedule Appointment"
             android:textAllCaps="false" />
 

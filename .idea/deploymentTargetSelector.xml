@@ -2,12 +2,12 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="app">
+      <SelectionState runConfigName="BloodConnect">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-10-05T13:25:16.658918757Z">
+        <DropdownSelection timestamp="2025-11-06T06:38:02.903603523Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RZ2XA00SA6E" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/home/avitheduck/.android/avd/Medium_Phone.avd" />
             </handle>
           </Target>
         </DropdownSelection>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--This is a comment to force a rebuild-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,6 +13,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
@@ -21,11 +23,32 @@
         android:name="com.duckco.bloodconnect.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
+
+        <!-- Added Later -->
         <action
             android:id="@+id/action_registerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.duckco.bloodconnect.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
@@ -39,8 +62,11 @@
         <action
             android:id="@+id/action_dashboardFragment_to_scheduleDonationFragment"
             app:destination="@id/scheduleDonationFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_createRequestFragment"
+            app:destination="@id/createRequestFragment" />
     </fragment>
-    
+
     <fragment
         android:id="@+id/emergencyRequestsFragment"
         android:name="com.duckco.bloodconnect.EmergencyRequestsFragment"
@@ -52,5 +78,23 @@
         android:name="com.duckco.bloodconnect.ScheduleDonationFragment"
         android:label="fragment_schedule_donation"
         tools:layout="@layout/fragment_schedule_donation" />
+
+    <fragment
+        android:id="@+id/myDonationsFragment"
+        android:name="com.duckco.bloodconnect.MyDonationsFragment"
+        android:label="fragment_my_donations"
+        tools:layout="@layout/fragment_my_donations" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.duckco.bloodconnect.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/createRequestFragment"
+        android:name="com.duckco.bloodconnect.CreateRequestFragment"
+        android:label="fragment_create_request"
+        tools:layout="@layout/fragment_create_request" />
 
 </navigation>

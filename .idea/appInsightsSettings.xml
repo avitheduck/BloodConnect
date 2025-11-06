@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.duckco.bloodconnect" />
+                  <option name="mobileSdkAppId" value="1:116318066377:android:379e76f3663ce1fe9b1f18" />
+                  <option name="projectId" value="bloodconnect-987456" />
+                  <option name="projectNumber" value="116318066377" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

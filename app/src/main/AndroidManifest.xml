@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodConnect" >
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAqSmBqUp9yLFnN0eHttYPGy6WrffdTOpI" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
