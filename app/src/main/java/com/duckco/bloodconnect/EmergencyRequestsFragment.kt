@@ -12,13 +12,13 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.toObject
 
 class EmergencyRequestsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: EmergencyRequestAdapter
-    private val requestsList = mutableListOf<EmergencyRequest>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +34,8 @@ class EmergencyRequestsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.emergencyRequestsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
         
-        // Pass the click handler to the adapter
-        adapter = EmergencyRequestAdapter(requestsList) { request ->
+        // Initialize adapter with an empty list
+        adapter = EmergencyRequestAdapter(mutableListOf()) { request ->
             onAcceptRequest(request)
         }
         recyclerView.adapter = adapter
@@ -63,6 +63,7 @@ class EmergencyRequestsFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
 
         db.collection("emergency_requests")
+            .orderBy("timestamp", Query.Direction.DESCENDING) // Show newest requests first
             .addSnapshotListener { snapshots, e ->
                 if (e != null) {
                     Log.w("EmergencyRequests", "Listen failed.", e)
@@ -70,16 +71,10 @@ class EmergencyRequestsFragment : Fragment() {
                     return@addSnapshotListener
                 }
 
-                requestsList.clear()
-                for (document in snapshots!!) {
-                    try {
-                        val request = document.toObject<EmergencyRequest>()
-                        requestsList.add(request)
-                    } catch (ex: Exception) {
-                        Log.e("EmergencyRequests", "Error converting document", ex)
-                    }
+                if (snapshots != null) {
+                    val requests = snapshots.toObjects(EmergencyRequest::class.java)
+                    adapter.updateData(requests) // Use the new updateData method
                 }
-                adapter.notifyDataSetChanged()
             }
     }
 }

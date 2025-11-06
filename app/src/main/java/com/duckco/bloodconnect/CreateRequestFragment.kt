@@ -31,6 +31,7 @@ class CreateRequestFragment : Fragment() {
         val bloodTypeSpinner = view.findViewById<Spinner>(R.id.bloodTypeSpinner)
         val patientNameEditText = view.findViewById<EditText>(R.id.patientNameEditText)
         val hospitalNameEditText = view.findViewById<EditText>(R.id.hospitalNameEditText)
+        val locationEditText = view.findViewById<EditText>(R.id.locationEditText) // Added this line
         val contactNumberEditText = view.findViewById<EditText>(R.id.contactNumberEditText)
         val additionalInfoEditText = view.findViewById<EditText>(R.id.additionalInfoEditText)
         val submitButton = view.findViewById<Button>(R.id.submitRequestButton)
@@ -44,11 +45,12 @@ class CreateRequestFragment : Fragment() {
         submitButton.setOnClickListener {
             val patientName = patientNameEditText.text.toString().trim()
             val hospitalName = hospitalNameEditText.text.toString().trim()
+            val location = locationEditText.text.toString().trim() // Added this line
             val bloodType = bloodTypeSpinner.selectedItem.toString()
             val contactNumber = contactNumberEditText.text.toString().trim()
             val additionalInfo = additionalInfoEditText.text.toString().trim()
 
-            if (patientName.isEmpty() || hospitalName.isEmpty() || contactNumber.isEmpty()) {
+            if (patientName.isEmpty() || hospitalName.isEmpty() || location.isEmpty() || contactNumber.isEmpty()) { // Added location check
                 Toast.makeText(context, "Please fill all required fields.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -56,6 +58,7 @@ class CreateRequestFragment : Fragment() {
             val request = EmergencyRequest(
                 patientName = patientName,
                 hospitalName = hospitalName,
+                location = location, // Added location
                 bloodType = bloodType,
                 contactNumber = contactNumber,
                 additionalInfo = additionalInfo

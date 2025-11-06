@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class EmergencyRequestAdapter(
-    private val requestsList: List<EmergencyRequest>,
+    private var requestsList: MutableList<EmergencyRequest>,
     private val onAcceptClicked: (EmergencyRequest) -> Unit
 ) :
     RecyclerView.Adapter<EmergencyRequestAdapter.ViewHolder>() {
@@ -17,6 +17,7 @@ class EmergencyRequestAdapter(
         val patientName: TextView = view.findViewById(R.id.patientNameTextView)
         val bloodType: TextView = view.findViewById(R.id.bloodTypeTextView)
         val hospitalName: TextView = view.findViewById(R.id.hospitalNameTextView)
+        val location: TextView = view.findViewById(R.id.locationTextView) // Added location TextView
         val acceptButton: Button = view.findViewById(R.id.acceptRequestButton)
     }
 
@@ -30,7 +31,8 @@ class EmergencyRequestAdapter(
         val request = requestsList[position]
         holder.patientName.text = request.patientName
         holder.bloodType.text = "Blood Type: ${request.bloodType}"
-        holder.hospitalName.text = "At: ${request.hospitalName}"
+        holder.hospitalName.text = request.hospitalName // Simplified text
+        holder.location.text = "At: ${request.location}" // Set location text
 
         holder.acceptButton.setOnClickListener {
             onAcceptClicked(request)
@@ -38,4 +40,10 @@ class EmergencyRequestAdapter(
     }
 
     override fun getItemCount() = requestsList.size
+
+    fun updateData(newRequests: List<EmergencyRequest>) {
+        requestsList.clear()
+        requestsList.addAll(newRequests)
+        notifyDataSetChanged() // Refresh the list
+    }
 }

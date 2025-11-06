@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.GeoPoint
 import java.util.Calendar
 
 class ScheduleDonationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -70,6 +71,9 @@ class ScheduleDonationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
         datePicker = view.findViewById(R.id.datePicker)
         scheduleButton = view.findViewById(R.id.scheduleButton)
 
+        // Set the minimum date to today
+        datePicker.minDate = System.currentTimeMillis() - 1000
+
         scheduleButton.setOnClickListener {
             scheduleAppointment()
         }
@@ -80,8 +84,13 @@ class ScheduleDonationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener(this)
 
+        // Move camera to Jaipur
+        val jaipurLatLng = LatLng(26.9124, 75.7873)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jaipurLatLng, 12f))
+
         enableMyLocation()
         fetchDonationCenters()
+        addJaipurHospitals()
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
@@ -105,9 +114,26 @@ class ScheduleDonationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             mMap.isMyLocationEnabled = true
-            // Optional: Move camera to user's location
         } else {
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+    }
+
+    private fun addJaipurHospitals() {
+        val jaipurHospitals = listOf(
+            DonationCenter("Sawai Man Singh (SMS) Hospital", "Jawahar Lal Nehru Marg, Jaipur", GeoPoint(26.8954, 75.8037)),
+            DonationCenter("Fortis Escorts Hospital", "Jawahar Lal Nehru Marg, Malviya Nagar, Jaipur", GeoPoint(26.8553, 75.8051)),
+            DonationCenter("Narayana Multispeciality Hospital", "Sector 28, Kumbha Marg, Pratap Nagar, Jaipur", GeoPoint(26.8422, 75.8119)),
+            DonationCenter("Mahatma Gandhi Hospital", "RIICO Institutional Area, Sitapura, Jaipur", GeoPoint(26.7644, 75.8732)),
+            DonationCenter("Eternal Heart Care Centre (EHCC)", "Jawahar Circle, Jaipur", GeoPoint(26.8741, 75.8111))
+        )
+
+        for (hospital in jaipurHospitals) {
+            hospital.location?.let { geoPoint ->
+                val position = LatLng(geoPoint.latitude, geoPoint.longitude)
+                val marker = mMap.addMarker(MarkerOptions().position(position).title(hospital.name))
+                marker?.tag = Pair("jaipur_${hospital.name}", hospital)
+            }
         }
     }
 
@@ -121,8 +147,6 @@ class ScheduleDonationFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMar
                     marker?.tag = Pair(document.id, center)
                 }
             }
-            // Move camera to a default location if needed
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.422, -122.084), 10f))
         }
     }
 

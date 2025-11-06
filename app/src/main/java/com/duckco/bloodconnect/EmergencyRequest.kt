@@ -10,6 +10,7 @@ import java.util.Date
 data class EmergencyRequest(
     val patientName: String = "",
     val hospitalName: String = "",
+    val location: String = "", // Added location field
     val bloodType: String = "",
     val contactNumber: String = "",
     val additionalInfo: String = "",

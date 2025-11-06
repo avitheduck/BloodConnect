@@ -36,6 +36,14 @@
             android:text="At: City Hospital"
             android:textAppearance="?attr/textAppearanceBody2" />
 
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Location: Anytown"
+            android:textAppearance="?attr/textAppearanceBody2" />
+
         <Button
             android:id="@+id/acceptRequestButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"

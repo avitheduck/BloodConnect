@@ -97,4 +97,10 @@
         android:label="fragment_create_request"
         tools:layout="@layout/fragment_create_request" />
 
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.duckco.bloodconnect.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+
 </navigation>
