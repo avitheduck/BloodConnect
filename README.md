@@ -1,6 +1,3 @@
-<img width="3392" height="448" alt="image" src="https://github.com/user-attachments/assets/454c80eb-5211-4c93-a448-933f304598e3" /><img width="1677" height="511" alt="image" src="https://github.com/user-attachments/assets/f7219901-a989-48a0-b443-5ff0f75cdf7c" />Major Project: [CA3270]
-
-
 **IntelliBlood(formerly BloodConnect)
 AI-Driven Hematological Supply Chain & Donor Predictive Analytics Platform
 **
