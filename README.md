@@ -9,11 +9,11 @@ This project demonstrates how Artificial Intelligence and Geospatial Analytics c
 
 1.1 Aim of the Project
 
->To create seamless, real-time connections between blood donors and receivers.
->To provide a smart matching system to quickly locate compatible donors.
->To reduce response times and improve coordination during medical emergencies.
->To ensure secure communication channels and protect donor privacy.
->To provide an efficient, centralized system for hospitals and donors.
+To create seamless, real-time connections between blood donors and receivers.
+To provide a smart matching system to quickly locate compatible donors.
+To reduce response times and improve coordination during medical emergencies.
+To ensure secure communication channels and protect donor privacy.
+To provide an efficient, centralized system for hospitals and donors.
 
 
 **Problem Statement**
