@@ -1,54 +1,15 @@
-**IntelliBlood(formerly BloodConnect)
-AI-Driven Hematological Supply Chain & Donor Predictive Analytics Platform
-**
-
-This project demonstrates how Artificial Intelligence and Geospatial Analytics can safely and efficiently match blood donors with urgent hospital requests, eliminating the need for manual coordination.
+# 💫 About Me:
+**IntelliBlood(formerly BloodConnect) AI-Driven Hematological Supply Chain & Donor Predictive Analytics Platform **<br><br>This project demonstrates how Artificial Intelligence and Geospatial Analytics can safely and efficiently match blood donors with urgent hospital requests, eliminating the need for manual coordination.<br><br>Introduction<br><br>1.1 Aim of the Project<br><br>To create seamless, real-time connections between blood donors and receivers.<br><br>To provide a smart matching system to quickly locate compatible donors.<br><br>To reduce response times and improve coordination during medical emergencies.<br><br>To ensure secure communication channels and protect donor privacy.<br><br>To provide an efficient, centralized system for hospitals and donors.<br><br>Problem Statement<br><br>The Inefficiency: In medical emergencies, patients and hospitals struggle to find suitable blood donors quickly due to manual, slow, and unorganized processes. The Technology Gap: Existing digital systems rely on basic location matching or mass-broadcasting, which leads to donor "alert fatigue" and unpredictable turnout rates. The Missing Intelligence: Current platforms fail to analyze historical data, donor reliability, or exact geospatial constraints, meaning the "closest" donor on paper is rarely the most reliable one in practice.The Required Solution: A predictive, AI-powered centralized system is required to rank potential donors based on their actual likelihood to donate, minimizing emergency response times and maximizing successful fulfillment.<br><br>Proposed Methodology<br><br>Secure Profile Initialization: Users register as Donors or Receivers, capturing critical health data and precise geospatial coordinates instead of just pincodes. Urgent Requirement Processing: Hospitals initiate a blood request through a centralized dashboard, specifying blood type, units, and urgency level. Smart-Matching Pipeline: A Python-based engine utilizes weighted ML algorithms to analyze proximity, compatibility, and donor reliability. Prioritized Notification Queue: Instead of a broad broadcast, the system targets high-probability donors via an event-driven web architecture. Fulfillment Tracking & Analytics: Completed donations are logged to retrain the ML model, continuously improving matching accuracy for future requests.<br><br>Conclusion: IntelliBlood represents a significant technological leap from manual coordination to a proactive, AI-driven ecosystem. By transitioning from a standard mobile utility to a high-performance web platform, the system successfully integrates Geospatial Intelligence and Machine Learning to minimize emergency response latency. This project demonstrates a robust, scalable architecture capable of handling complex data relationships, ultimately providing medical institutions with the analytical tools necessary to manage life-saving blood supplies with unprecedented precision and speed.<br><br>Future Scope<br><br>1.Predictive Demand Forecasting: Implementing LSTM (Long Short-Term Memory) models to predict seasonal blood shortages in specific geographic regions before they occur.<br><br>2.Direct Hospital Inventory Sync: Developing secure APIs to integrate directly with live hospital blood bank databases for fully automated request generation.<br><br>3.Donor Reliability Gamification: Introducing a reward-based system and "Donor Badges" to improve long-term engagement and the accuracy of the system’s reliability scoring.<br><br>4.Health Record Integration: Expanding the platform to securely fetch donor health history via government health IDs to ensure higher quality and safer blood matches.
 
 
-**Introduction**
+# 💻 Tech Stack:
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Abhijit Sah&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Abhijit Sah&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Abhijit Sah&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
+---
+[![](https://visitcount.itsvg.in/api?id=Abhijit Sah&icon=0&color=0)](https://visitcount.itsvg.in)
 
-
-1.1 Aim of the Project
-
-
-To create seamless, real-time connections between blood donors and receivers.
-
-To provide a smart matching system to quickly locate compatible donors.
-
-To reduce response times and improve coordination during medical emergencies.
-
-To ensure secure communication channels and protect donor privacy.
-
-To provide an efficient, centralized system for hospitals and donors.
-
-
-
-**Problem Statement**
-
-The Inefficiency: In medical emergencies, patients and hospitals struggle to find suitable blood donors quickly due to manual, slow, and unorganized processes. The Technology Gap: Existing digital systems rely on basic location matching or mass-broadcasting, which leads to donor "alert fatigue" and unpredictable turnout rates. The Missing Intelligence: Current platforms fail to analyze historical data, donor reliability, or exact geospatial constraints, meaning the "closest" donor on paper is rarely the most reliable one in practice.The Required Solution: A predictive, AI-powered centralized system is required to rank potential donors based on their actual likelihood to donate, minimizing emergency response times and maximizing successful fulfillment.
-
-**Proposed Methodology**
-
-Secure Profile Initialization: Users register as Donors or Receivers, capturing critical health data and precise geospatial coordinates instead of just pincodes.
-Urgent Requirement Processing: Hospitals initiate a blood request through a centralized dashboard, specifying blood type, units, and urgency level.
-Smart-Matching Pipeline: A Python-based engine utilizes weighted ML algorithms to analyze proximity, compatibility, and donor reliability.
-Prioritized Notification Queue: Instead of a broad broadcast, the system targets high-probability donors via an event-driven web architecture.
-Fulfillment Tracking & Analytics: Completed donations are logged to retrain the ML model, continuously improving matching accuracy for future requests.
-
-
-**Conclusion**: IntelliBlood represents a significant technological leap from manual coordination to a proactive, AI-driven ecosystem. By transitioning from a standard mobile utility to a high-performance web platform, the system successfully integrates Geospatial Intelligence and Machine Learning to minimize emergency response latency. This project demonstrates a robust, scalable architecture capable of handling complex data relationships, ultimately providing medical institutions with the analytical tools necessary to manage life-saving blood supplies with unprecedented precision and speed.
-
-
-
-**Future Scope**
-
-
-1.Predictive Demand Forecasting: Implementing LSTM (Long Short-Term Memory) models to predict seasonal blood shortages in specific geographic regions before they occur.
-
-2.Direct Hospital Inventory Sync: Developing secure APIs to integrate directly with live hospital blood bank databases for fully automated request generation.
-
-3.Donor Reliability Gamification: Introducing a reward-based system and "Donor Badges" to improve long-term engagement and the accuracy of the system’s reliability scoring.
-
-4.Health Record Integration: Expanding the platform to securely fetch donor health history via government health IDs to ensure higher quality and safer blood matches.
-
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
